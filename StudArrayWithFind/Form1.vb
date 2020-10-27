@@ -11,7 +11,7 @@
     End Class
     Dim students(9) As STUDENT
     Dim studentCount As Integer = 0
-    'Test for github'
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'allocate memory
         For i = 0 To 9
