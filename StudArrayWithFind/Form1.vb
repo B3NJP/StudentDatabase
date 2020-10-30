@@ -53,7 +53,7 @@
     End Sub
     Private Sub btnAddStud_Click(sender As Object, e As EventArgs) Handles btnAddStud.Click
         'place text from text boxes into the array - first students(0), then students(1), students(2) etc
-        If Not ErrorChecking(txtFirstName.Text, txtLastName.Text, txtGender.Text, txtAvMk.Text, txtPhone.Text) Then
+        If Not ErrorChecking(txtFirstName.Text, txtLastName.Text, txtDOB.Text, txtGender.Text, txtAvMk.Text, txtPhone.Text) Then
             Exit Sub
         End If
         students(studentCount).firstname = txtFirstName.Text
@@ -84,10 +84,28 @@
         Next
     End Sub
 
-    Private Function ErrorChecking(fname, lastname, gender, avMk, PhoneNo)
+    Private Function ErrorChecking(fname, lname, dob, gender, avMk, PhoneNo)
         If fname = "" Then
             MsgBox("Please enter a first name")
             Return False
         End If
+        If lname = "" Then
+            MsgBox("Please enter a last name")
+            Return False
+        End If
+        If gender <> "m" And gender <> "f" Then
+            MsgBox("Gender should be 'm' or 'f' lowercase")
+            Return False
+        End If
+        If Not IsNumeric(avMk) Or (Convert.ToDecimal(avMk) >= 0 And Convert.ToDecimal(avMk) <= 100) Then
+            MsgBox("Make sure average mark is a number between 0 and 100 inclusive")
+            Return False
+        End If
+        If Len(PhoneNo) = 10 Then
+            MsgBox("Make sure the phone number is 10 digits")
+            Return False
+        End If
+        Return True
     End Function
+
 End Class
