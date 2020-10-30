@@ -53,6 +53,9 @@
     End Sub
     Private Sub btnAddStud_Click(sender As Object, e As EventArgs) Handles btnAddStud.Click
         'place text from text boxes into the array - first students(0), then students(1), students(2) etc
+        If Not ErrorChecking(txtFirstName.Text, txtLastName.Text, txtGender.Text, txtAvMk.Text, txtPhone.Text) Then
+            Exit Sub
+        End If
         students(studentCount).firstname = txtFirstName.Text
         students(studentCount).lastname = txtLastName.Text
         students(studentCount).DOB = txtDOB.Text
@@ -81,7 +84,10 @@
         Next
     End Sub
 
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs)
-
-    End Sub
+    Private Function ErrorChecking(fname, lastname, gender, avMk, PhoneNo)
+        If fname = "" Then
+            MsgBox("Please enter a first name")
+            Return False
+        End If
+    End Function
 End Class
