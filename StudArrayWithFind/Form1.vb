@@ -97,7 +97,7 @@
             MsgBox("Gender should be 'm' or 'f' lowercase")
             Return False
         End If
-        If Not IsNumeric(avMk) Or (Convert.ToDecimal(avMk) >= 0 And Convert.ToDecimal(avMk) <= 100) Then
+        If Not IsNumeric(avMk) OrElse (Convert.ToDecimal(avMk) < 0 Or Convert.ToDecimal(avMk) > 100) Then
             MsgBox("Make sure average mark is a number between 0 and 100 inclusive")
             Return False
         End If
