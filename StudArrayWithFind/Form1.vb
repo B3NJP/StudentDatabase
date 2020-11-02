@@ -1,4 +1,6 @@
-﻿Public Class Form1
+﻿Imports System.Text.RegularExpressions
+
+Public Class Form1
     'set up a record or "class" for a student
     Class STUDENT
         Public firstname As String
@@ -101,7 +103,7 @@
             MsgBox("Make sure average mark is a number between 0 and 100 inclusive")
             Return False
         End If
-        If Len(PhoneNo) = 10 Then
+        If Not Regex.IsMatch(PhoneNo, "\([0-9]{3}\) [0-9]{3}-[0-9]{4}") Then
             MsgBox("Make sure the phone number is 10 digits")
             Return False
         End If
