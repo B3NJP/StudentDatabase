@@ -110,4 +110,7 @@ Public Class Form1
         Return True
     End Function
 
+    Private Sub btnFindStud_Click(sender As Object, e As EventArgs) Handles btnFindStud.Click
+
+    End Sub
 End Class
