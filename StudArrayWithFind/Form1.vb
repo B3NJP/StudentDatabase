@@ -110,7 +110,25 @@ Public Class Form1
         Return True
     End Function
 
-    Private Sub btnFindStud_Click(sender As Object, e As EventArgs) Handles btnFindStud.Click
+    Private Function StringifyStudent(stud)
+        Return stud.firstname & " - " & stud.lastname & " - " &
+                              stud.DOB & " - " & stud.gender & " - " & stud.avMk & " - " & stud.phoneNo & " - " & stud.paid & "."
+    End Function
 
+    Private Sub btnFindStud_Click(sender As Object, e As EventArgs) Handles btnFindStud.Click
+        If txtLastName.Text = "" Then
+            MsgBox("Enter last name")
+            Exit Sub
+        End If
+        Dim foundStud As Boolean = False
+        For Each stud In students
+            If stud.lastname = txtLastName.Text Then
+                MsgBox(StringifyStudent(stud))
+                foundStud = True
+            End If
+        Next
+        If Not foundStud Then
+            MsgBox("No students found")
+        End If
     End Sub
 End Class
