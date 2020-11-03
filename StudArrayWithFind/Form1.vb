@@ -11,12 +11,12 @@ Public Class Form1
         Public phoneNo As String
         Public paid As Boolean
     End Class
-    Dim students(9) As STUDENT
+    Dim students(20) As STUDENT
     Dim studentCount As Integer = 0
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'allocate memory
-        For i = 0 To 9
+        For i = 0 To 20
             students(i) = New STUDENT
         Next
         'load 4 test records
@@ -48,9 +48,71 @@ Public Class Form1
         students(3).avMk = 72.2
         students(3).phoneNo = "0918273645"
         students(3).paid = True
-
+        students(4).firstname = "Johnny"
+        students(4).lastname = "Deppy"
+        students(4).DOB = "9/6/68"
+        students(4).gender = "m"
+        students(4).avMk = 78.2
+        students(4).phoneNo = "0123456789"
+        students(4).paid = False
+        students(5).firstname = "Fred"
+        students(5).lastname = "Bear"
+        students(5).DOB = "9/4/63"
+        students(5).gender = "m"
+        students(5).avMk = 78.2
+        students(5).phoneNo = "0123456789"
+        students(5).paid = False
+        students(6).firstname = "Mickey"
+        students(6).lastname = "Mouse"
+        students(6).DOB = "28/12/98"
+        students(6).gender = "m"
+        students(6).avMk = 78.2
+        students(6).phoneNo = "0123456789"
+        students(6).paid = False
+        students(7).firstname = "Fred"
+        students(7).lastname = "Flintstone"
+        students(7).DOB = "4/11/03"
+        students(7).gender = "m"
+        students(7).avMk = 78.2
+        students(7).phoneNo = "0123456789"
+        students(7).paid = False
+        students(8).firstname = "Minnie"
+        students(8).lastname = "Mouse"
+        students(8).DOB = "9/6/63"
+        students(8).gender = "f"
+        students(8).avMk = 78.2
+        students(8).phoneNo = "0123455555"
+        students(8).paid = True
+        students(9).firstname = "Boo"
+        students(9).lastname = "Depp"
+        students(9).DOB = "9/6/01"
+        students(9).gender = "m"
+        students(9).avMk = 99
+        students(9).phoneNo = "0123456789"
+        students(9).paid = False
+        students(10).firstname = "Lori Anne"
+        students(10).lastname = "Allison"
+        students(10).DOB = "9/6/63"
+        students(10).gender = "f"
+        students(10).avMk = 66
+        students(10).phoneNo = "0123456789"
+        students(10).paid = False
+        students(11).firstname = "Amber"
+        students(11).lastname = "Heard"
+        students(11).DOB = "28/2/00"
+        students(11).gender = "f"
+        students(11).avMk = 77
+        students(11).phoneNo = "0123456789"
+        students(11).paid = False
+        students(12).firstname = "Pistol"
+        students(12).lastname = "Depp"
+        students(12).DOB = "9/6/98"
+        students(12).gender = "m"
+        students(12).avMk = 3
+        students(12).phoneNo = "0123456789"
+        students(12).paid = False
         'set the student count to the number of students which have been entered
-        studentCount = 4
+        studentCount = 13
         displayList()
     End Sub
     Private Sub btnAddStud_Click(sender As Object, e As EventArgs) Handles btnAddStud.Click
