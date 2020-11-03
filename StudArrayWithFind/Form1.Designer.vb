@@ -40,6 +40,7 @@ Partial Class Form1
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtDOB = New System.Windows.Forms.DateTimePicker()
         Me.btnFindStud = New System.Windows.Forms.Button()
+        Me.selStud = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'txtFirstName
@@ -193,11 +194,20 @@ Partial Class Form1
         Me.btnFindStud.Text = "Find Student"
         Me.btnFindStud.UseVisualStyleBackColor = True
         '
+        'selStud
+        '
+        Me.selStud.Location = New System.Drawing.Point(270, 175)
+        Me.selStud.Name = "selStud"
+        Me.selStud.ReadOnly = True
+        Me.selStud.Size = New System.Drawing.Size(290, 20)
+        Me.selStud.TabIndex = 19
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(611, 391)
+        Me.Controls.Add(Me.selStud)
         Me.Controls.Add(Me.btnFindStud)
         Me.Controls.Add(Me.txtDOB)
         Me.Controls.Add(Me.Label7)
@@ -245,4 +255,5 @@ Partial Class Form1
     Friend WithEvents Label7 As Label
     Friend WithEvents txtDOB As DateTimePicker
     Friend WithEvents btnFindStud As Button
+    Friend WithEvents selStud As TextBox
 End Class

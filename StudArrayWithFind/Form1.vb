@@ -146,6 +146,7 @@ Public Class Form1
             lstStud.Items.Add(students(i).firstname & " - " & students(i).lastname & " - " &
                               students(i).DOB & " - " & students(i).gender & " - " & students(i).avMk & " - " & students(i).phoneNo & " - " & students(i).paid & ".")
         Next
+        lstStud.SelectedIndex = studentCount - 1
     End Sub
 
     Private Function ErrorChecking(fname, lname, dob, gender, avMk, PhoneNo)
@@ -192,5 +193,9 @@ Public Class Form1
         If Not foundStud Then
             MsgBox("No students found")
         End If
+    End Sub
+
+    Private Sub lstStud_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstStud.SelectedIndexChanged
+        selStud.Text = sender.SelectedItem
     End Sub
 End Class
