@@ -150,11 +150,11 @@ Public Class Form1
     End Sub
 
     Private Function ErrorChecking(fname, lname, dob, gender, avMk, PhoneNo)
-        If fname = "" Then
+        If Not Regex.IsMatch(fname, "[A-Z][a-z]*") Then
             MsgBox("Please enter a first name")
             Return False
         End If
-        If lname = "" Then
+        If Not Regex.IsMatch(lname, "[A-Z][a-z]*") Then
             MsgBox("Please enter a last name")
             Return False
         End If
