@@ -198,4 +198,43 @@ Public Class Form1
     Private Sub lstStud_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstStud.SelectedIndexChanged
         selStud.Text = sender.SelectedItem
     End Sub
+
+    Private Sub btnEditStud_Click(sender As Object, e As EventArgs) Handles btnEditStud.Click
+        txtFirstName.Text = students(lstStud.SelectedIndex).firstname
+        txtLastName.Text = students(lstStud.SelectedIndex).lastname
+        txtDOB.Text = students(lstStud.SelectedIndex).DOB
+        txtGender.Text = students(lstStud.SelectedIndex).gender
+        txtAvMk.Text = students(lstStud.SelectedIndex).avMk
+        txtPhone.Text = students(lstStud.SelectedIndex).phoneNo
+        chkPaid.Checked = students(lstStud.SelectedIndex).paid
+        btnAddStud.Enabled = False
+        btnReplStud.Visible = True
+        lstStud.Enabled = False
+        btnEditStud.Enabled = False
+    End Sub
+
+    Private Sub btnReplStud_Click(sender As Object, e As EventArgs) Handles btnReplStud.Click
+        If Not ErrorChecking(txtFirstName.Text, txtLastName.Text, txtDOB.Text, txtGender.Text, txtAvMk.Text, txtPhone.Text) Then
+            Exit Sub
+        End If
+        students(lstStud.SelectedIndex).firstname = txtFirstName.Text
+        students(lstStud.SelectedIndex).lastname = txtLastName.Text
+        students(lstStud.SelectedIndex).DOB = txtDOB.Text
+        students(lstStud.SelectedIndex).gender = txtGender.Text
+        students(lstStud.SelectedIndex).avMk = txtAvMk.Text
+        students(lstStud.SelectedIndex).phoneNo = txtPhone.Text
+        students(lstStud.SelectedIndex).paid = chkPaid.Checked
+        txtFirstName.Text = ""
+        txtLastName.Text = ""
+        txtDOB.Text = ""
+        txtGender.Text = ""
+        txtAvMk.Text = ""
+        txtPhone.Text = ""
+        chkPaid.Checked = False
+        displayList()
+        btnReplStud.Visible = False
+        btnAddStud.Enabled = True
+        lstStud.Enabled = True
+        btnEditStud.Enabled = True
+    End Sub
 End Class

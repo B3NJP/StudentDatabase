@@ -41,6 +41,8 @@ Partial Class Form1
         Me.txtDOB = New System.Windows.Forms.DateTimePicker()
         Me.btnFindStud = New System.Windows.Forms.Button()
         Me.selStud = New System.Windows.Forms.TextBox()
+        Me.btnEditStud = New System.Windows.Forms.Button()
+        Me.btnReplStud = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtFirstName
@@ -187,7 +189,7 @@ Partial Class Form1
         '
         'btnFindStud
         '
-        Me.btnFindStud.Location = New System.Drawing.Point(460, 129)
+        Me.btnFindStud.Location = New System.Drawing.Point(460, 117)
         Me.btnFindStud.Name = "btnFindStud"
         Me.btnFindStud.Size = New System.Drawing.Size(100, 23)
         Me.btnFindStud.TabIndex = 8
@@ -202,11 +204,32 @@ Partial Class Form1
         Me.selStud.Size = New System.Drawing.Size(290, 20)
         Me.selStud.TabIndex = 19
         '
+        'btnEditStud
+        '
+        Me.btnEditStud.Location = New System.Drawing.Point(460, 146)
+        Me.btnEditStud.Name = "btnEditStud"
+        Me.btnEditStud.Size = New System.Drawing.Size(100, 23)
+        Me.btnEditStud.TabIndex = 20
+        Me.btnEditStud.Text = "Edit Student"
+        Me.btnEditStud.UseVisualStyleBackColor = True
+        '
+        'btnReplStud
+        '
+        Me.btnReplStud.Location = New System.Drawing.Point(39, 159)
+        Me.btnReplStud.Name = "btnReplStud"
+        Me.btnReplStud.Size = New System.Drawing.Size(104, 23)
+        Me.btnReplStud.TabIndex = 21
+        Me.btnReplStud.Text = "Replace Student"
+        Me.btnReplStud.UseVisualStyleBackColor = True
+        Me.btnReplStud.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(611, 391)
+        Me.Controls.Add(Me.btnReplStud)
+        Me.Controls.Add(Me.btnEditStud)
         Me.Controls.Add(Me.selStud)
         Me.Controls.Add(Me.btnFindStud)
         Me.Controls.Add(Me.txtDOB)
@@ -256,4 +279,6 @@ Partial Class Form1
     Friend WithEvents txtDOB As DateTimePicker
     Friend WithEvents btnFindStud As Button
     Friend WithEvents selStud As TextBox
+    Friend WithEvents btnEditStud As Button
+    Friend WithEvents btnReplStud As Button
 End Class
