@@ -178,23 +178,6 @@ Public Class Form1
                               stud.DOB & " - " & stud.gender & " - " & stud.avMk & " - " & stud.phoneNo & " - " & stud.paid & "."
     End Function
 
-    Private Sub btnFindStud_Click(sender As Object, e As EventArgs) Handles btnFindStud.Click
-        If txtLastName.Text = "" Then
-            MsgBox("Enter last name")
-            Exit Sub
-        End If
-        Dim foundStud As Boolean = False
-        For Each stud In students
-            If stud.lastname = txtLastName.Text Then
-                MsgBox(StringifyStudent(stud))
-                foundStud = True
-            End If
-        Next
-        If Not foundStud Then
-            MsgBox("No students found")
-        End If
-    End Sub
-
     Private Sub lstStud_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstStud.SelectedIndexChanged
         selStud.Text = sender.SelectedItem
     End Sub
@@ -236,5 +219,23 @@ Public Class Form1
         btnAddStud.Enabled = True
         lstStud.Enabled = True
         btnEditStud.Enabled = True
+    End Sub
+
+    Private Sub chkFind_CheckedChanged(sender As Object, e As EventArgs) Handles chkFind.CheckedChanged
+        If (sender.Checked) Then
+            btnAddStud.Enabled = False
+            btnEditStud.Enabled = False
+            lstStud.Items.Clear()
+            For i = 0 To studentCount - 1
+                If Regex.IsMatch(students(i).lastname, txtLastName.Text) Then
+                    lstStud.Items.Add(students(i).firstname & " - " & students(i).lastname & " - " &
+                              students(i).DOB & " - " & students(i).gender & " - " & students(i).avMk & " - " & students(i).phoneNo & " - " & students(i).paid & ".")
+                End If
+            Next
+        Else
+            btnAddStud.Enabled = True
+            btnEditStud.Enabled = True
+            displayList()
+        End If
     End Sub
 End Class

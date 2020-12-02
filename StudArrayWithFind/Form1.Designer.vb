@@ -39,10 +39,10 @@ Partial Class Form1
         Me.chkPaid = New System.Windows.Forms.CheckBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtDOB = New System.Windows.Forms.DateTimePicker()
-        Me.btnFindStud = New System.Windows.Forms.Button()
         Me.selStud = New System.Windows.Forms.TextBox()
         Me.btnEditStud = New System.Windows.Forms.Button()
         Me.btnReplStud = New System.Windows.Forms.Button()
+        Me.chkFind = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'txtFirstName
@@ -187,15 +187,6 @@ Partial Class Form1
         Me.txtDOB.Size = New System.Drawing.Size(100, 20)
         Me.txtDOB.TabIndex = 2
         '
-        'btnFindStud
-        '
-        Me.btnFindStud.Location = New System.Drawing.Point(460, 117)
-        Me.btnFindStud.Name = "btnFindStud"
-        Me.btnFindStud.Size = New System.Drawing.Size(100, 23)
-        Me.btnFindStud.TabIndex = 8
-        Me.btnFindStud.Text = "Find Student"
-        Me.btnFindStud.UseVisualStyleBackColor = True
-        '
         'selStud
         '
         Me.selStud.Location = New System.Drawing.Point(270, 175)
@@ -223,15 +214,25 @@ Partial Class Form1
         Me.btnReplStud.UseVisualStyleBackColor = True
         Me.btnReplStud.Visible = False
         '
+        'chkFind
+        '
+        Me.chkFind.AutoSize = True
+        Me.chkFind.Location = New System.Drawing.Point(460, 123)
+        Me.chkFind.Name = "chkFind"
+        Me.chkFind.Size = New System.Drawing.Size(97, 17)
+        Me.chkFind.TabIndex = 22
+        Me.chkFind.Text = "Filter Lastname"
+        Me.chkFind.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(611, 391)
+        Me.Controls.Add(Me.chkFind)
         Me.Controls.Add(Me.btnReplStud)
         Me.Controls.Add(Me.btnEditStud)
         Me.Controls.Add(Me.selStud)
-        Me.Controls.Add(Me.btnFindStud)
         Me.Controls.Add(Me.txtDOB)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.chkPaid)
@@ -277,8 +278,8 @@ Partial Class Form1
     Friend WithEvents chkPaid As CheckBox
     Friend WithEvents Label7 As Label
     Friend WithEvents txtDOB As DateTimePicker
-    Friend WithEvents btnFindStud As Button
     Friend WithEvents selStud As TextBox
     Friend WithEvents btnEditStud As Button
     Friend WithEvents btnReplStud As Button
+    Friend WithEvents chkFind As CheckBox
 End Class
